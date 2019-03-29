@@ -68,3 +68,9 @@ class TradeBook:
             if item.value_in_alien:
                 item.value_in_roman = self.convert_from_alien_to_roman(item.value_in_alien)
                 item.value_in_arabic = self.convert_from_alien_to_roman(item.value_in_roman)
+    
+    def calculate_number_of_credits_for_given_alien_amount_of_item(self, alien_amount, item):
+        amount_in_arabic = self.convert_from_alien_to_arabic(alien_amount)
+        item = self.traded_items[item]
+        result_credits = item.number_of_credits * amount_in_arabic / item.value_in_arabic
+        return result_credits
