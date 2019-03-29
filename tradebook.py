@@ -62,3 +62,9 @@ class TradeBook:
         value_in_roman = self.convert_from_alien_to_roman(value_in_alien)
         value_in_arabic = self.convert_from_roman_to_arabic(value_in_roman)
         return value_in_arabic
+    
+    def compute_reference_values_for_items(self):
+        for item in self.traded_items:
+            if item.value_in_alien:
+                item.value_in_roman = self.convert_from_alien_to_roman(item.value_in_alien)
+                item.value_in_arabic = self.convert_from_alien_to_roman(item.value_in_roman)
