@@ -48,6 +48,13 @@ class TradeBook:
         return value_in_arabic
 
 
-    def convert_from_alien_to_roman(self):
-        pass
+    def convert_from_alien_to_roman(self, value_in_alien):
+        list_of_words_in_alien_value = value_in_alien.split()
+
+        value_in_roman = ''
+
+        for word in list_of_words_in_alien_value:
+            value_in_roman = value_in_roman + self.conversion_table_alien_to_roman[word]
+        
+        return value_in_roman
     
