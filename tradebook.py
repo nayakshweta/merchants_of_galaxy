@@ -57,4 +57,3 @@ class TradeBook:
             value_in_roman = value_in_roman + self.conversion_table_alien_to_roman[word]
         
         return value_in_roman
-    
